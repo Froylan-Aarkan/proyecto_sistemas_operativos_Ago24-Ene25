@@ -13,9 +13,9 @@ echo "Ingrese un comando:"
 read COMANDO
 echo ""
 
-while [ $COMANDO != "salir" ]; do
-	if [ $COMANDO == "ayuda" ]; then
-		echo "procesos - muestra todos los procesos en ejecución"
+while [ "$COMANDO" != "salir" ]; do
+	if [ "$COMANDO" == "ayuda" ]; then
+		echo "Lista de comandos:"
 		echo ""
 
 	else
@@ -28,4 +28,4 @@ while [ $COMANDO != "salir" ]; do
 	echo ""
 done
 
-
+echo "¡Nos vemos pronto!"
