@@ -6,17 +6,17 @@ cd /home/froy/Data
 
 echo "Bienvenido a bash interface :D"
 echo ""
-echo "Escriba 'ayuda' para ver todos los comandos disponibles"
-echo ""
-echo "Escriba 'limpiar' para limpiar la pantalla"
-echo ""
-echo "Escriba 'salir' para salir del programa"
-echo ""
 
 while true; do
     echo ""
+    echo -e "Ingrese " "\033[0;36mayuda\033[0m" " para ver todos los comandos disponibles"
+    echo ""
+    echo -e "Ingrese " "\033[0;36mlimpiar\033[0m" " para limpiar la pantalla"
+    echo ""
+    echo -e "Ingrese " "\033[0;36msalir\033[0m" " para salir del programa"
+    echo ""
     echo "Directorio actual:"
-    echo $PWD
+    echo -e "\033[0;33m$PWD\033[0m"
     echo ""
     echo "Ingrese un comando:"
     read COMANDO
@@ -32,32 +32,32 @@ while true; do
 	    ;;
         ayuda)
             echo "Lista de comandos:"
-            echo "  actualizar sistema -> Actualiza el sistema"
-            echo "  limpiar sistema -> Limpia paquetes innecesarios"
-            echo "  buscar archivos -> Busca archivos por nombre en la direccion actual"
-            echo "  ver espacio en disco -> Muestra el espacio en disco"
-            echo "  monitorear el uso de memoria -> Muestra uso de memoria"
-            echo "  procesos activos -> Lista los procesos activos"
-            echo "  ver tareas -> Muestra las tareas en tiempo real"
-            echo "  crear directorio -> Crea un directorio"
-            echo "  eliminar directorio -> Elimina un directorio vacío"
-            echo "  copiar archivos -> Copia archivos de un lugar a otro"
-            echo "  mover archivos -> Mueve archivos de un lugar a otro"
-            echo "  listar -> Lista archivos y directorios de la direccion actual"
-	    echo "  listar por tipo -> Lista solamente los archivos de la direccion actual con el formato solicitado"
-            echo "  moverse ->  moverse a la direccion solicitada"
-	    echo "  regresar -> regresar un nivel de la direccion actual"
-	    echo "  Mostrar la ip local"
-            echo "  Mostrar historial de comandos"
-            echo "  Montar dispositivos"
-            echo "  Desmontar dispositivos"
-            echo "  Instalar paquetes"
-            echo "  Desinstalar paquetes"
-            echo "  Actualizar permisos de un archivo o carpeta"
-            echo "  Cambiar propietario de archivos o carpeta"
-            echo "  Ver estadisticas de uso de red"
-            echo "  Obtener logs del sistema en tiempo real"
-            echo "  Ver el arbol de procesos"
+            echo -e " \033[0;36mactualizar sistema\033[0m" " -> Actualiza el sistema"
+            echo -e " \033[0;36mlimpiar sistema\033[0m" " -> Limpia paquetes innecesarios"
+            echo -e " \033[0;36mbuscar archivos\033[0m" " -> Busca archivos por nombre en la direccion actual"
+            echo -e " \033[0;36mespacio en disco\033[0m" " -> Muestra el espacio en disco"
+            echo -e " \033[0;36muso de memoria\033[0m" " -> Muestra uso de memoria"
+            echo -e " \033[0;36mprocesos activos\033[0m" " -> Lista los procesos activos"
+            echo -e " \033[0;36mtareas\033[0m" " -> Muestra las tareas en tiempo real"
+            echo -e " \033[0;36mcrear directorio\033[0m" " -> Crea un directorio"
+            echo -e " \033[0;36meliminar directorio\033[0m" " -> Elimina un directorio vacío"
+            echo -e " \033[0;36mcopiar archivos\033[0m" " -> Copia archivos de un lugar a otro"
+            echo -e " \033[0;36mmover archivos\033[0m" " -> Mueve archivos de un lugar a otro"
+            echo -e " \033[0;36mlistar\033[0m -> Lista archivos y directorios de la direccion actual"
+	    echo -e " \033[0;36mlistar por tipo\033[0m -> Lista solamente los archivos de la direccion actual con el formato solicitado"
+            echo -e " \033[0;36mmoverse\033[0m" " ->  Moverse a la direccion solicitada"
+	    echo -e " \033[0;36mregresar\033[0m -> Regresar un nivel de la direccion actual"
+	    echo -e " \033[0;36mip\033[0m -> Muestra la ip local"
+            echo -e " \033[0;36mhistorial de comandos\033[0m -> Muestra el historial de comandos utilizados"
+            echo -e " \033[0;36mmontar dispositivos\033[0m" "-> "
+            echo -e " \033[0;36mdesmontar dispositivos\033[0m" "-> "
+            echo -e " \033[0;36minstalar\033[0m" " -> Instala el paquete solicitado"
+            echo -e " \033[0;36mdesinstalar\033[0m" " -> Desinstala el paquete solicitado"
+            echo -e " \033[0;36mactualizar permisos\033[0m" "-> Actualiza los permisos de un archivo o carpeta"
+            echo -e " cambiar propietario de archivos o carpeta"
+            echo -e " \033[0;36muso de red\033[0m" " -> Muestra las estadisticas de uso de la red"
+            echo -e " obtener logs del sistema en tiempo real"
+            echo -e " \033[0;36marbol de procesos\033[0m" " -> Muestra el arbol de procesos"
             ;;
         "actualizar sistema")
             sudo apt-get update
@@ -75,16 +75,16 @@ while true; do
             read ARCHIVO
             find . -name "*$ARCHIVO*"
             ;;
-        "ver espacio en disco")
+        "espacio en disco")
             df -h
             ;;
-        "monitorear el uso de memoria")
+        "uso de memoria")
             free -h
             ;;
-        "comprobar procesos activos")
+        "procesos activos")
             ps aux
             ;;
-        "ver tareas")
+        "tareas")
             top
             ;;
         "crear directorio")
@@ -121,48 +121,50 @@ while true; do
 	    ls *.$TIPO
 	    ;;
 	"moverse")
-	    echo "Ingrese la direccion a ir:"
+	    echo "Ingrese la direccion a moverse:"
 	    read DESTINO
 	    cd $DESTINO
 	    ;;
 	"regresar")
 	    cd ..
 	    ;;
-         "Mostrar la ip local"
-            alias ip_local='hostname -I'
+        "ip")
+            echo "IP local:"
+	    hostname -I
             ;;
-        "Mostrar el historial de comandos"
-            alias hist='history'
-            buscar_historial() {
+        "historial de comandos")
             history | grep "$1"
-            }
             ;;
-        "Montar dispositivos"
-            alias montar='sudo mount'
+        "montar dispositivos")
+            sudo mount
             ;;
-        "Desmontar dispositivos"
-            alias desmontar='sudo umount'
+        "desmontar dispositivos")
+            sudo umount
             ;;
-        "Instalar paquetes"
-            alias instalar='sudo apt install'
+        "instalar")
+	    echo "Ingrese el paquete a instalar:"
+	    read PAQUETE
+            sudo apt install $PAQUETE
             ;;
-        "Desinstalar paquetes"
-            alias desinstalar='sudo apt remove'
+        "desinstalar")
+            echo "Ingrese el paquete a desinstalar:"
+	    read PAQUETE
+	    sudo apt remove $PAQUETE
             ;;  
-        "Actualizar permisos de un archivo o carpeta"
+        "Actualizar permisos de un archivo o carpeta")
             alias permisos='chmod'
             ;;
-        "Cambiar propietario de archivos o carpetas"
+        "Cambiar propietario de archivos o carpetas")
             alias propietario='chown'
             ;;
-        "Ver estadisticas de uso de red"
-            alias red='ifconfig'
+        "uso de red")
+            ifconfig
             ;;
-        "Obtener logs del sistema en tiempo real"
+        "Obtener logs del sistema en tiempo real")
             alias logs='tail -f /var/log/syslog'
             ;;
-        "Ver el arbol de procesos"
-            alias arbol_procesos='pstree'
+        "arbol de procesos")
+            pstree
             ;;
 
         *)
