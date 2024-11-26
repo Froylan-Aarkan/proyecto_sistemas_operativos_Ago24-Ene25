@@ -47,7 +47,17 @@ while true; do
 	    echo "  listar por tipo -> Lista solamente los archivos de la direccion actual con el formato solicitado"
             echo "  moverse ->  moverse a la direccion solicitada"
 	    echo "  regresar -> regresar un nivel de la direccion actual"
-	    echo ""
+	    echo "  Mostrar la ip local"
+            echo "  Mostrar historial de comandos"
+            echo "  Montar dispositivos"
+            echo "  Desmontar dispositivos"
+            echo "  Instalar paquetes"
+            echo "  Desinstalar paquetes"
+            echo "  Actualizar permisos de un archivo o carpeta"
+            echo "  Cambiar propietario de archivos o carpeta"
+            echo "  Ver estadisticas de uso de red"
+            echo "  Obtener logs del sistema en tiempo real"
+            echo "  Ver el arbol de procesos"
             ;;
         "actualizar sistema")
             sudo apt-get update
@@ -118,6 +128,43 @@ while true; do
 	"regresar")
 	    cd ..
 	    ;;
+         "Mostrar la ip local"
+            alias ip_local='hostname -I'
+            ;;
+        "Mostrar el historial de comandos"
+            alias hist='history'
+            buscar_historial() {
+            history | grep "$1"
+            }
+            ;;
+        "Montar dispositivos"
+            alias montar='sudo mount'
+            ;;
+        "Desmontar dispositivos"
+            alias desmontar='sudo umount'
+            ;;
+        "Instalar paquetes"
+            alias instalar='sudo apt install'
+            ;;
+        "Desinstalar paquetes"
+            alias desinstalar='sudo apt remove'
+            ;;  
+        "Actualizar permisos de un archivo o carpeta"
+            alias permisos='chmod'
+            ;;
+        "Cambiar propietario de archivos o carpetas"
+            alias propietario='chown'
+            ;;
+        "Ver estadisticas de uso de red"
+            alias red='ifconfig'
+            ;;
+        "Obtener logs del sistema en tiempo real"
+            alias logs='tail -f /var/log/syslog'
+            ;;
+        "Ver el arbol de procesos"
+            alias arbol_procesos='pstree'
+            ;;
+
         *)
             echo "Comando no válido"
             ;;
