@@ -61,25 +61,26 @@ while true; do
             echo -e " \033[0;36muso de red\033[0m" " -> Muestra las estadisticas de uso de la red"
             echo -e " obtener logs del sistema en tiempo real"
             echo -e " \033[0;36marbol de procesos\033[0m" " -> Muestra el arbol de procesos"
+	    echo -e " \033[0;36meditor de texto\033[0m" " -> Abre el editor de texto nano"
             ;;
         "actualizar sistema")
             sudo apt-get update
 	    echo ""
-	    echo "Sistema actualizado"
+	    echo -e "\033[0;32mSistema actualizado.\033[0m"
             ;;
         "limpiar sistema")
             sudo apt-get autoremove && sudo apt-get autoclean
 
 	    echo ""
-	    echo "El sistema ha sido limpiado"
+	    echo -e "\033[0;32mEl sistema ha sido limpiado.\033[0m"
             ;;
 	"reiniciar")
 	    echo "¿Seguro que desea reiniciar el sistema? s/n"
 	    read RESPUESTA
 	    if [ "$RESPUESTA" == "s" ]; then
-		sudo reboot
+		sudo shutdown -r now
 	    else
-		echo "Se canceló el reinicio."
+		echo -e "\033[0;31mSe canceló el reinicio.\033[0m"
 	    fi
 	    ;;
 	"apagar")
@@ -88,12 +89,13 @@ while true; do
 	    if [ "$RESPUESTA" == "s" ]; then
 		sudo shutdown now
 	    else
-		echo "Se canceló el apagado."
+		echo -e "\033[0;32mSe canceló el apagado.\033[0m"
 	    fi
 	    ;;
         "buscar archivos")
             echo "Ingrese el nombre del archivo a buscar:"
             read ARCHIVO
+	    echo ""
             find . -name "*$ARCHIVO*"
             ;;
         "espacio en disco")
@@ -112,7 +114,7 @@ while true; do
             echo "Ingrese el nombre del directorio a crear:"
             read DIR
             mkdir "$DIR"
-	    echo "Directorio $DIR creado."
+	    echo -e "\033[0;32mDirectorio $DIR creado.\033[0m"
             ;;
         "eliminar directorio")
             echo "Ingrese el nombre del directorio a eliminar (debe estar vacio):"
@@ -190,7 +192,9 @@ while true; do
         "arbol de procesos")
             pstree
             ;;
-
+	"editor de texto")
+	    nano
+	    ;;
         *)
             echo "Comando no válido"
             ;;
