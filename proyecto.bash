@@ -2,7 +2,7 @@
 
 clear
 
-cd /home/froy/Data
+cd
 
 echo "Bienvenido a bash interface :D"
 echo ""
@@ -34,7 +34,9 @@ while true; do
             echo "Lista de comandos:"
             echo -e " \033[0;36mactualizar sistema\033[0m" " -> Actualiza el sistema"
             echo -e " \033[0;36mlimpiar sistema\033[0m" " -> Limpia paquetes innecesarios"
-            echo -e " \033[0;36mbuscar archivos\033[0m" " -> Busca archivos por nombre en la direccion actual"
+	    echo -e " \033[0;36mreiniciar\033[0m" " -> Reinicia el equipo"
+            echo -e " \033[0;36mapagar\033[0m" " -> Apaga el equipo"
+	    echo -e " \033[0;36mbuscar archivos\033[0m" " -> Busca archivos por nombre en la direccion actual"
             echo -e " \033[0;36mespacio en disco\033[0m" " -> Muestra el espacio en disco"
             echo -e " \033[0;36muso de memoria\033[0m" " -> Muestra uso de memoria"
             echo -e " \033[0;36mprocesos activos\033[0m" " -> Lista los procesos activos"
@@ -46,7 +48,8 @@ while true; do
             echo -e " \033[0;36mlistar\033[0m -> Lista archivos y directorios de la direccion actual"
 	    echo -e " \033[0;36mlistar por tipo\033[0m -> Lista solamente los archivos de la direccion actual con el formato solicitado"
             echo -e " \033[0;36mmoverse\033[0m" " ->  Moverse a la direccion solicitada"
-	    echo -e " \033[0;36mregresar\033[0m -> Regresar un nivel de la direccion actual"
+	    echo -e " \033[0;36mregresar\033[0m" " -> Regresar un nivel de la direccion actual"
+	    echo -e " \033[0;36mregresar home\033[0m" " -> Regresar al directorio raiz"
 	    echo -e " \033[0;36mip\033[0m -> Muestra la ip local"
             echo -e " \033[0;36mhistorial de comandos\033[0m -> Muestra el historial de comandos utilizados"
             echo -e " \033[0;36mmontar dispositivos\033[0m" "-> "
@@ -70,6 +73,24 @@ while true; do
 	    echo ""
 	    echo "El sistema ha sido limpiado"
             ;;
+	"reiniciar")
+	    echo "¿Seguro que desea reiniciar el sistema? s/n"
+	    read RESPUESTA
+	    if [ "$RESPUESTA" == "s" ]; then
+		sudo reboot
+	    else
+		echo "Se canceló el reinicio."
+	    fi
+	    ;;
+	"apagar")
+	    echo "¿Seguro que desea apagar el sistema? s/n"
+	    read RESPUESTA
+	    if [ "$RESPUESTA" == "s" ]; then
+		sudo shutdown now
+	    else
+		echo "Se canceló el apagado."
+	    fi
+	    ;;
         "buscar archivos")
             echo "Ingrese el nombre del archivo a buscar:"
             read ARCHIVO
@@ -127,6 +148,9 @@ while true; do
 	    ;;
 	"regresar")
 	    cd ..
+	    ;;
+	"regresar home")
+	    cd
 	    ;;
         "ip")
             echo "IP local:"
