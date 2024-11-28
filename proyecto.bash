@@ -32,37 +32,35 @@ while true; do
 	    ;;
         ayuda)
             echo "Lista de comandos:"
-            echo -e " \033[0;36mactualizar sistema\033[0m" " -> Actualiza el sistema"
-            echo -e " \033[0;36mlimpiar sistema\033[0m" " -> Limpia paquetes innecesarios"
-	    echo -e " \033[0;36mreiniciar\033[0m" " -> Reinicia el equipo"
-            echo -e " \033[0;36mapagar\033[0m" " -> Apaga el equipo"
-	    echo -e " \033[0;36mbuscar archivos\033[0m" " -> Busca archivos por nombre en la direccion actual"
-            echo -e " \033[0;36mespacio en disco\033[0m" " -> Muestra el espacio en disco"
-            echo -e " \033[0;36muso de memoria\033[0m" " -> Muestra uso de memoria"
-            echo -e " \033[0;36mprocesos activos\033[0m" " -> Lista los procesos activos"
-            echo -e " \033[0;36mtareas\033[0m" " -> Muestra las tareas en tiempo real"
-            echo -e " \033[0;36mcrear directorio\033[0m" " -> Crea un directorio"
-            echo -e " \033[0;36meliminar directorio\033[0m" " -> Elimina un directorio vacío"
-            echo -e " \033[0;36mcopiar archivos\033[0m" " -> Copia archivos de un lugar a otro"
-            echo -e " \033[0;36mmover archivos\033[0m" " -> Mueve archivos de un lugar a otro"
-            echo -e " \033[0;36mlistar\033[0m -> Lista archivos y directorios de la direccion actual"
-	    echo -e " \033[0;36mlistar por tipo\033[0m -> Lista solamente los archivos de la direccion actual con el formato solicitado"
-            echo -e " \033[0;36mmoverse\033[0m" " ->  Moverse a la direccion solicitada"
-	    echo -e " \033[0;36mregresar\033[0m" " -> Regresar un nivel de la direccion actual"
-	    echo -e " \033[0;36mregresar home\033[0m" " -> Regresar al directorio raiz"
-	    echo -e " \033[0;36mip\033[0m -> Muestra la ip local"
-            echo -e " \033[0;36mhistorial de comandos\033[0m -> Muestra el historial de comandos utilizados"
-            echo -e " \033[0;36mmontar dispositivos\033[0m" "-> "
-            echo -e " \033[0;36mdesmontar dispositivos\033[0m" "-> "
-            echo -e " \033[0;36minstalar\033[0m" " -> Instala el paquete solicitado"
-            echo -e " \033[0;36mdesinstalar\033[0m" " -> Desinstala el paquete solicitado"
-            echo -e " \033[0;36mactualizar permisos\033[0m" "-> Actualiza los permisos de un archivo o carpeta"
-            echo -e " cambiar propietario de archivos o carpeta"
-            echo -e " \033[0;36muso de red\033[0m" " -> Muestra las estadisticas de uso de la red"
-            echo -e " obtener logs del sistema en tiempo real"
-            echo -e " \033[0;36marbol de procesos\033[0m" " -> Muestra el arbol de procesos"
-	    echo -e " \033[0;36meditor de texto\033[0m" " -> Abre el editor de texto nano"
-            ;;
+            echo -e "1. \033[0;36mactualizar sistema\033[0m" " -> Actualiza el sistema"
+            echo -e "2. \033[0;36mlimpiar sistema\033[0m" " -> Limpia paquetes innecesarios"
+	    echo -e "3. \033[0;36mreiniciar\033[0m" " -> Reinicia el equipo"
+            echo -e "4. \033[0;36mapagar\033[0m" " -> Apaga el equipo"
+	    echo -e "5. \033[0;36mbuscar archivos\033[0m" " -> Busca archivos por nombre en la direccion actual"
+            echo -e "6. \033[0;36mespacio en disco\033[0m" " -> Muestra el espacio en disco"
+            echo -e "7. \033[0;36muso de memoria\033[0m" " -> Muestra uso de memoria"
+            echo -e "8. \033[0;36mprocesos activos\033[0m" " -> Lista los procesos activos"
+            echo -e "9. \033[0;36mtareas\033[0m" " -> Muestra las tareas en tiempo real"
+            echo -e "10. \033[0;36mcrear directorio\033[0m" " -> Crea un directorio"
+            echo -e "11. \033[0;36meliminar directorio\033[0m" " -> Elimina un directorio vacío"
+            echo -e "12. \033[0;36mcopiar archivos\033[0m" " -> Copia archivos de un lugar a otro"
+            echo -e "13. \033[0;36mmover archivos\033[0m" " -> Mueve archivos de un lugar a otro"
+            echo -e "14. \033[0;36mlistar\033[0m -> Lista archivos y directorios de la direccion actual"
+	    echo -e "15. \033[0;36mlistar por tipo\033[0m -> Lista solamente los archivos de la direccion actual con el formato solicitado"
+            echo -e "16. \033[0;36mmoverse\033[0m" " ->  Moverse a la direccion solicitada"
+	    echo -e "17. \033[0;36mregresar\033[0m" " -> Regresar un nivel de la direccion actual"
+	    echo -e "18. \033[0;36mregresar home\033[0m" " -> Regresar al directorio raiz"
+	    echo -e "19. \033[0;36mip\033[0m -> Muestra la ip local"
+            echo -e "20. \033[0;36mhistorial de comandos\033[0m -> Muestra el historial de comandos utilizados"
+            echo -e "21. \033[0;36minstalar\033[0m" " -> Instala el paquete solicitado"
+            echo -e "22. \033[0;36mdesinstalar\033[0m" " -> Desinstala el paquete solicitado"
+            echo -e "23. \033[0;36mactualizar permisos\033[0m" "-> Actualiza los permisos de un archivo o carpeta"
+            echo -e "24. \033[0;36muso de red\033[0m" " -> Muestra las estadisticas de uso de la red"
+            echo -e "25. \033[0;36mlogs\033[0m" " -> Muestra los logs del sistema"
+            echo -e "26. \033[0;36marbol de procesos\033[0m" " -> Muestra el arbol de procesos"
+	    echo -e "27. \033[0;36meditor de texto\033[0m" " -> Abre el editor de texto nano"
+            echo -e "28. \033[0;36mejecutar bash\033[0m" " -> Ejecuta el archivo de tipo bash solicitado"
+	    ;;
         "actualizar sistema")
             sudo apt-get update
 	    echo ""
@@ -159,13 +157,7 @@ while true; do
 	    hostname -I
             ;;
         "historial de comandos")
-            history | grep "$1"
-            ;;
-        "montar dispositivos")
-            sudo mount
-            ;;
-        "desmontar dispositivos")
-            sudo umount
+            history
             ;;
         "instalar")
 	    echo "Ingrese el paquete a instalar:"
@@ -176,18 +168,19 @@ while true; do
             echo "Ingrese el paquete a desinstalar:"
 	    read PAQUETE
 	    sudo apt remove $PAQUETE
-            ;;  
-        "Actualizar permisos de un archivo o carpeta")
-            alias permisos='chmod'
             ;;
-        "Cambiar propietario de archivos o carpetas")
-            alias propietario='chown'
+        "actualizar permisos")
+	    echo "Ingrese el archivo a carpeta a cambiar permiso"
+	    read ARCHIVO
+            echo "Ingrese los permisos a actualizar (+x por ejemplo)"
+	    read PERMISOS
+            chmod $PERMISOS $ARCHIVO
             ;;
         "uso de red")
             ifconfig
             ;;
-        "Obtener logs del sistema en tiempo real")
-            alias logs='tail -f /var/log/syslog'
+        "logs")
+            tail -f /var/log/syslog
             ;;
         "arbol de procesos")
             pstree
@@ -195,9 +188,14 @@ while true; do
 	"editor de texto")
 	    nano
 	    ;;
+	"ejecutar bash")
+	    echo "Ingrese el archivo bash a ejecutar:"
+	    read ARCHIVO
+	    echo ""
+	    bash $ARCHIVO
+	    ;;
         *)
             echo "Comando no válido"
             ;;
     esac
 done
-
